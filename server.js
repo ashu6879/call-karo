@@ -25,7 +25,7 @@ const makeCall = (contact) => {
       to: contact,
       from: '+917404506030',  // Your Twilio verified phone number
       url: `http://twimlets.com/message?Message%5B0%5D=${encodeURIComponent(mp3Url)}`,  // URL that plays the MP3 file
-      statusCallback: 'http://your-ngrok-url-or-public-server/call-status',  // Replace with your ngrok or public URL
+      statusCallback: 'https://call-karo.vercel.app/call-status',  // Replace with your ngrok or public URL
       statusCallbackEvent: ['completed', 'busy', 'failed', 'no-answer'],  // Call events to track
     })
     .then(call => console.log(`Call initiated to ${contact}. Call SID: ${call.sid}`))
