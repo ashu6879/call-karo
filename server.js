@@ -8,7 +8,7 @@ const authToken = process.env.Auth_Token;    // Twilio Auth Token from .env
 const client = new twilio(accountSid, authToken);
 
 // List of contact numbers to call
-const contacts = ['+919306533729'];
+const contacts = ['+917404506030'];
 let contactIndex = 0;  // Start with the first contact
 
 // URL of the MP3 file to play
@@ -19,7 +19,7 @@ const makeCall = (contact) => {
   client.calls
     .create({
       to: contact,
-      from: '+917404506030',  // Your Twilio verified phone number
+      from: '1 224 701 3225',  // Your Twilio verified phone number
       url: `http://twimlets.com/message?Message%5B0%5D=${encodeURIComponent(mp3Url)}`,  // URL that plays the MP3 file
       statusCallback: 'https://call-karo.vercel.app/api/call-status',  // Vercel serverless function URL
       statusCallbackEvent: ['completed', 'busy', 'failed', 'no-answer'],  // Call events to track
